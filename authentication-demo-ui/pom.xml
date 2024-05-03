@@ -19,6 +19,18 @@
 		<maven.compiler.version>3.8.0</maven.compiler.version>
 	</properties>
 
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>io.mosip.kernel</groupId>
+				<artifactId>kernel-bom</artifactId>
+				<version>1.2.1-java21-SNAPSHOT</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -51,12 +63,6 @@
 			<version>5.4-alpha2</version>
 		</dependency>
 		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>1.18.30</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
 		    <groupId>org.bitbucket.b_c</groupId>
 		    <artifactId>jose4j</artifactId>
 		    <version>0.6.5</version>
@@ -75,7 +81,7 @@
 		<dependency>
 			<groupId>io.mosip.kernel</groupId>
 			<artifactId>kernel-keymanager-service</artifactId>
-			<version>1.2.0</version>	
+			<version>1.2.1-java21-SNAPSHOT</version>
 			<classifier>lib</classifier>
 		</dependency>
 		<dependency>
@@ -118,7 +124,6 @@
 			    <artifactId>javafx-controls</artifactId>
 			    <version>${openjfx.version}</version>
 			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.openjfx/javafx-fxml -->
 			<dependency>
 			    <groupId>org.openjfx</groupId>
 			    <artifactId>javafx-fxml</artifactId>
