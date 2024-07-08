@@ -84,6 +84,7 @@
         <spring.security.test.version>5.0.5.RELEASE</spring.security.test.version>
         <spring-cloud-config.version>2.0.0.RELEASE</spring-cloud-config.version>
         <maven.sonar.plugin.version>3.7.0.1746</maven.sonar.plugin.version>
+	<maven.javadoc.version>3.2.0</maven.javadoc.version>
 
     </properties>
 
@@ -238,6 +239,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
+		<version>${maven.javadoc.version}</version>
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
@@ -250,6 +252,13 @@
                     <doclint>none</doclint>
                 </configuration>
             </plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<configuration>
+					<aggregate>true</aggregate>
+				</configuration>
+			</plugin>		
             <plugin>
                 <groupId>pl.project13.maven</groupId>
                 <artifactId>git-commit-id-plugin</artifactId>
