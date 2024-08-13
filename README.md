@@ -24,10 +24,25 @@ This app depends on below MOSIP components:
 * [kernel-keymanager-service](https://github.com/mosip/keymanager)
 * [kernel-core](https://github.com/mosip/commons/tree/master/kernel/kernel-core)
 
-## Build
-The following command should be run in the project to build the application - 
-`mvn clean install -Dgpg.skip=true`
+## Config-Server
+To run Authentication demo service, run [Config Server](https://docs.mosip.io/1.2.0/modules/module-configuration#config-server)
 
+## Build & run (for developers)
+The project requires JDK 1.21.
+1. Build and install:
+    ```
+    $ cd authentication-demo-ui
+    $ mvn install -DskipTests=true -Dmaven.javadoc.skip=true -Dgpg.skip=true
+    ```
+
+### Add auth-adapter in a class-path to run a services
+   ```
+   <dependency>
+       <groupId>io.mosip.kernel</groupId>
+       <artifactId>kernel-auth-adapter</artifactId>
+       <version>${kernel.auth.adaptor.version}</version>
+   </dependency>
+   ```
 
 ## Update application launch script:
 Update the `ID-Authentication-Demo-UI.bat` batch file as below:
